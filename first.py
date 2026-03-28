@@ -42,6 +42,7 @@ def index():
 
     return render_template('index.html', students=students)
 
+
 @app.route('/add', methods=['GET','POST'])
 def add_student():
 
@@ -65,6 +66,7 @@ def add_student():
         return redirect('/')
 
     return render_template('add_student.html')
+
 
 @app.route('/delete/<int:id>')
 def delete_student(id):
@@ -107,7 +109,6 @@ def edit_student(id):
     conn.close()
 
     return render_template("edit_student.html", student=student)
-
 if __name__ == "__main__":
     init_db()
     app.run(debug=True)
